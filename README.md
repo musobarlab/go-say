@@ -1,4 +1,4 @@
-Golang Text to Speec with Flite's Alpine
+Golang Text to Speech with Flite's Alpine
 
 Docker:
  - move to backend directory 'cd /be'
