@@ -1,4 +1,6 @@
-Golang Text to Speech with Flite's Alpine
+Golang Text to Speech with Alpine's Flite
+
+https://pkgs.alpinelinux.org/package/v3.4/main/x86/flite
 
 Docker:
  - move to backend directory 'cd /be'
