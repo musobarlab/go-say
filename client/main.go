@@ -3,8 +3,10 @@ package main
 import (
 	"context"
 	"flag"
+	"fmt"
 	"io/ioutil"
 	"log"
+	"os"
 
 	pb "github.com/wuriyanto48/go-say/api"
 	"google.golang.org/grpc"
@@ -15,6 +17,11 @@ func main() {
 	output := flag.String("o", "output.wav", "wav output")
 	flag.Parse()
 
+	if len(os.Args) < 2 {
+		fmt.Printf("usage:\n\t%s \"text to Speech\"", os.Args[0])
+		os.Exit(1)
+	}
+
 	conn, err := grpc.Dial(*backend, grpc.WithInsecure())
 	if err != nil {
 		log.Fatal(err)
@@ -23,7 +30,7 @@ func main() {
 	defer conn.Close()
 
 	client := pb.NewTextToSpeechClient(conn)
-	text := &pb.Text{Text: "hello, fuck"}
+	text := &pb.Text{Text: os.Args[1]}
 	res, err := client.Say(context.Background(), text)
 	if err != nil {
 		log.Fatal(err)

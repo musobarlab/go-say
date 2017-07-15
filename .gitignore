@@ -3,5 +3,6 @@ run.md
 # dependencies directory
 vendor/
 be/data
+client/output.wav
 
 .DS_Store
