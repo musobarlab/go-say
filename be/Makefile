@@ -1,4 +1,4 @@
 build:
-	GOOS=linux go build -o app
+	CGO_ENABLED=0 GOOS=linux go build -ldflags '-w -s' -a -o main
 	docker build -t wury/say .
-	rm -f app
+	rm -f main

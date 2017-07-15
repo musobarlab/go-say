@@ -1,7 +1,7 @@
 FROM alpine
 
 RUN apk update && apk add flite
-
-ADD app /app
-
-ENTRYPOINT ["/app"]
+RUN mkdir /app
+ADD . /app/
+WORKDIR /app
+CMD ["/app/main"]
