@@ -14,6 +14,7 @@ Docker:
 -----------------------------------------------------------------------------------------------
 
 # How to run Server and Client
+
   Run Server:
     - build first,
     - $ cd /be
