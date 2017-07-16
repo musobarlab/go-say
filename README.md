@@ -20,7 +20,8 @@ Docker:
     - $ cd /be
     - $ make build
     - ./run.sh Or docker run -p 8080:8080 wury/say
-  Run Client
+    
+  Run Client:
     - $ cd client
     - $ go run main.go -b "localhost:8080" "Hello Go"
     - you'll see the result at the same directory (output.wav)
