@@ -11,3 +11,15 @@ Docker:
  Using makefile:
   - make build
   - docker run --rm -v $(pwd)/data:/data -w /data wury/say "golang"
+-----------------------------------------------------------------------------------------------
+
+# How to run Server and Client
+  Run Server:
+    - build first,
+    - $ cd /be
+    - $ make build
+    - ./run.sh Or docker run -p 8080:8080 wury/say
+  Run Client
+    - $ cd client
+    - $ go run main.go -b "localhost:8080" "Hello Go"
+    - you'll see the result at the same directory (output.wav)
